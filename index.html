@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salesforce Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        header {
+            background-color: #0070d2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            max-height: 80px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .container {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .record-box {
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #e6f2ff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/Salesforce.com_logo.svg/1280px-Salesforce.com_logo.svg.png" alt="Salesforce Logo">
+    <span style="font-size: 2em; vertical-align: middle;">Salesforce Records Viewer</span>
+</header>
+
+<div class="container">
+    <div class="record-box">
+        <h3>Account Name: Acme Inc.</h3>
+        <p>Industry: Technology</p>
+        <p>Phone: (123) 456-7890</p>
+    </div>
+
+    <div class="record-box">
+        <h3>Contact Name: John Doe</h3>
+        <p>Email: john.doe@example.com</p>
+        <p>Title: Sales Manager</p>
+    </div>
+</div>
+
+<footer>
+    © 2025 Salesforce Viewer. All rights reserved.
+</footer>
+
+<!-- SF Agent Embeded code
+ -->
+
+  <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DgK000004e11V',
+				'M_C_Lead_Creation',
+				'https://orgfarm-cb16ec83ee-dev-ed.develop.my.site.com/ESWMCLeadCreation1751867037048',
+				{
+					scrt2URL: 'https://orgfarm-cb16ec83ee-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://orgfarm-cb16ec83ee-dev-ed.develop.my.site.com/ESWMCLeadCreation1751867037048/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+  
+</body>
+</html>
