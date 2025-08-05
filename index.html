@@ -106,29 +106,17 @@
 				{
 					scrt2URL: 'https://orgfarm-cb16ec83ee-dev-ed.develop.my.salesforce-scrt.com',
 
-					// ✅ Use Channel Variable Names as labels
-					customPrechatData: [
-						{
-							label: "_firstName",
-							value: "Manish"
-						},
-						{
-							label: "_email",
-							value: "manish@example.com"
-						},
-						{
-							label: "Phone",
-							value: "9876543210"
-						},
-						{
-							label: "_subject",
-							value: "Need help with Sleep Image Portal"
-						}
-					]
+					// ✅ Pass context directly
+					customContext: {
+						_firstName: "Manish",
+						_email: "manish@example.com",
+						Phone: "9876543210",
+						_subject: "Need help with Sleep Image Portal"
+					}
 				}
 			);
 		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
+			console.error('❌ Error loading Embedded Messaging: ', err);
 		}
 	};
 </script>
