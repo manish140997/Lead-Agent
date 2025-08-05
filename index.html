@@ -74,7 +74,7 @@
 <!-- SF Agent Embeded code
  -->
 
-  <script type='text/javascript'>
+<!--   <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
@@ -93,6 +93,71 @@
 	};
 </script>
 <script type='text/javascript' src='https://orgfarm-cb16ec83ee-dev-ed.develop.my.site.com/ESWMCLeadCreation1751867037048/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-  
+   -->
+	<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US';
+
+			embeddedservice_bootstrap.init(
+				'00DgK000004e11V', // Your Org ID
+				'M_C_Lead_Creation', // Your Embedded Messaging Deployment API Name
+				'https://orgfarm-cb16ec83ee-dev-ed.develop.my.site.com/ESWMCLeadCreation1751867037048',
+				{
+					scrt2URL: 'https://orgfarm-cb16ec83ee-dev-ed.develop.my.salesforce-scrt.com',
+
+					// 👇 Prepopulate pre-chat fields
+					customPrechatData: [
+						{
+							label: "First Name",
+							value: "Manish",
+							entityFieldMaps: [{
+								doCreate: true,
+								doFind: false,
+								fieldName: "FirstName",
+								entityName: "Lead"
+							}]
+						},
+						{
+							label: "Email",
+							value: "manish@example.com",
+							entityFieldMaps: [{
+								doCreate: true,
+								doFind: true,
+								fieldName: "Email",
+								entityName: "Lead"
+							}]
+						},
+						{
+							label: "Phone",
+							value: "9876543210",
+							entityFieldMaps: [{
+								doCreate: true,
+								doFind: false,
+								fieldName: "Phone",
+								entityName: "Lead"
+							}]
+						},
+						{
+							label: "Subject",
+							value: "Need help with Sleep Image Portal",
+							entityFieldMaps: [{
+								doCreate: true,
+								doFind: false,
+								fieldName: "Subject__c", // If this is custom, use Subject__c
+								entityName: "Lead"
+							}]
+						}
+					]
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+
+<script type='text/javascript' src='https://orgfarm-cb16ec83ee-dev-ed.develop.my.site.com/ESWMCLeadCreation1751867037048/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
 </body>
 </html>
