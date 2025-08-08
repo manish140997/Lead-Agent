@@ -120,28 +120,6 @@
 		} catch (err) {
 			console.error('❌ Error loading Embedded Messaging: ', err);
 		}
-		setTimeout(function() {
-                const customCSS = `
-                    .embeddedServiceHelpButton .helpButton .uiButton {
-                        background-color: white !important;
-                        background-image: url('https://your-domain.com/path-to-image.png') !important;
-                        background-size: cover !important;
-                        background-repeat: no-repeat !important;
-                        background-position: center !important;
-                        border-radius: 50% !important;
-                    }
-                    .embeddedServiceHelpButton .helpButton .uiButton .helpButtonLabel {
-                        display: none !important;
-                    }
-                `;
-                
-                const styleElement = document.getElementById('chat-custom-styles');
-                styleElement.textContent = customCSS;
-            }, 2000); // Wait 2 seconds
-            
-        } catch (err) {
-            console.error('Error loading Embedded Messaging: ', err);
-        }
 	};
 </script>
 
